@@ -1,13 +1,7 @@
 \chapter{Fundamentals of Deep Learning}
-
-
-
-
+% ---------------------------------------- Major Branches of Deep Learning -------------------------
 \section{Major Branches of Deep Learning}
-
-
 \subsection{Supervised Learning}
-
 Supervised learning is one of the most widely used branches of deep learning. It involves training models on datasets where each input is paired with a corresponding output, commonly referred to as a \textit{label}. This approach enables models to learn the relationship between inputs and their known results, allowing them to make accurate predictions on new, unseen data. In essence, supervised learning is like teaching a system through examples where the correct answers are already provided.
 Supervised learning tasks typically fall into two categories:
 \begin{itemize}
@@ -38,9 +32,26 @@ Unsupervised learning is foundational for tasks like data visualization, where t
 
 \end{itemize}
 
-\subsection{Self-Supervised Learning}
-Self-supervised learning is a type of machine learning where the model generates its own labels from the input data, eliminating the need for human-annotated labels. These pseudo-labels guide the training process, making it possible to leverage vast amounts of unlabeled data. This approach is especially useful in hydrology, where labeled datasets are often scarce or incomplete.
 
+\subsection{Self-Supervised Learning}
+
+Self-supervised learning is a DL approach where the model generates its own labels directly from the input data, removing the need for human-annotated labels. These pseudo-labels guide the learning process, making it possible to utilize large amounts of unlabeled data. This is particularly beneficial in hydrology, where labeled datasets are often limited or incomplete.
+
+A key advantage of self-supervised learning is its scalability. By automatically generating pseudo-labels, it avoids the time and cost associated with manual labeling. A well-known example of self-supervised learning is the autoencoder, a model that compresses data into a compact representation (the "encoder") and then reconstructs it back to its original form (the "decoder"). The reconstruction error—the difference between the input and the reconstructed output—provides the learning signal. We will explore autoencoders in detail in Chapter~\ref{chap:acn} with a practical example.
+
+Here are two simple examples to illustrate self-supervised learning:
+
+\begin{itemize}
+    \item \textit{Noise Removal in Satellite Images:} Autoencoders can clean noisy satellite images by learning to reconstruct meaningful features, such as water boundaries, while removing noise.
+    \item \textit{Predicting Missing Data:} Models can predict missing streamflow values based on surrounding data, helping to fill gaps in hydrological records for further analysis.
+\end{itemize}
+
+\textbf{NOTE:} In this book, we’ll primarily focus on supervised learning, as it remains the most widely used and impactful form of deep learning in hydrology and environmental sciences, powering applications like precipitation forecasting, flood mapping, and drought prediction. We’ll also briefly explore self-supervised learning in later chapters, as it offers promising solutions for leveraging large, unlabeled datasets, which are common in these fields.
+
+\subsection{Reinforcement Learning}
+There is another branch of DL called Reinforcement Learning (RL), where an agent interacts with its environment, learning through trial and error to take actions that maximize a reward signal. Unlike traditional DL, which focuses on mapping inputs to outputs, RL emphasizes decision-making in dynamic environments. For example, an RL model could determine optimal reservoir release strategies by balancing flood control and water conservation. While RL has shown success in fields like robotics and gaming, its applications in hydrology are still largely in the research phase. In this book, we will primarily focus on supervised learning, leaving RL for further exploration in advanced studies.
+
+% ----------------------------------------Evaluating Deep Learning Models -------------------------
 
 
 
@@ -84,12 +95,15 @@ for train, test in kfold.split(data):
     # Apply training and testing here
 \end{lstlisting}
 
+% --------------------------------- Data Processing and Feature Engineering ----------------------
+
 \section{Data Processing and Feature Engineering}
 \begin{itemize}
     \item \textbf{Normalization and Vectorization:} Techniques to scale and convert data into a format suitable for deep learning.
     \item \textbf{Handling Missing Values:} Strategies for dealing with incomplete datasets.
     \item \textbf{Feature Engineering:} Discuss how effective features can be engineered from data to improve model performance.
 \end{itemize}
+% --------------------------------- Overfitting, Underfitting, and Model Optimization ---------------
 
 \section{Overfitting, Underfitting, and Model Optimization}
 \begin{itemize}
@@ -103,6 +117,7 @@ for train, test in kfold.split(data):
     \item \textbf{Dropout:} Randomly dropping units from the neural network during training to prevent over-reliance on any single neuron.
     \item \textbf{Batch Normalization:} Standardize the inputs to a layer within a mini-batch to stabilize the learning process.
 \end{itemize}
+% --------------------------------- Universal Workflow of Deep Learning ---------------
 
 \section{Universal Workflow of Deep Learning}
 Outline the standard steps involved in a deep learning project:
