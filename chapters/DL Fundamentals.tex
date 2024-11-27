@@ -27,26 +27,20 @@ Here are some representative examples of how supervised learning is applied in h
 
 \subsection{Unsupervised Learning }
 
-Unsupervised learning involves discovering patterns or interesting transformations in the data without the guidance of a specific target variable. This type of learning is crucial for feature discovery, dimensionality reduction, and understanding complex interactions in environmental datasets.
-
-\subsection{Key Applications of Unsupervised Learning}
-In the context of hydrology, climate studies, and geosciences, unsupervised learning helps in several key areas:
+Unsupervised learning focuses on uncovering patterns, structures, and transformations within data, all without relying on labeled outputs. Instead of predicting a specific target, it aims to reveal insights such as correlations, clusters, or low-dimensional representations. This type of learning is invaluable in hydrology and environmental sciences, where complex datasets often need to be distilled into more interpretable or actionable forms. 
+Unsupervised learning is foundational for tasks like data visualization, where the goal is to represent high-dimensional data in an intuitive way, and dimensionality reduction, which simplifies large datasets while retaining essential information. It also plays a critical role in data denoising, improving the quality of noisy remote sensing data to make subsequent analyses more reliable. Before solving supervised learning problems, unsupervised learning can act as a crucial first step to explore and understand the dataset, identify outliers, and discover hidden relationships.
 
 \begin{itemize}
-    \item \textbf{Data Visualization:} To better understand water quality measurements across different parameters.
-    \item \textbf{Data Compression:} Reducing the dimensionality of large climatic data sets for easier storage and faster processing.
-    \item \textbf{Data Denoising:} Removing noise from remote sensing data to improve the accuracy of further analyses.
+    \item \textit{Data Visualization:} Creating intuitive visual representations of high-dimensional datasets, such as water quality measurements spanning multiple variables, to better understand spatial and temporal trends.
+    \item \textit{Dimensionality Reduction:} Simplifying vast climatic datasets, like global temperature records or precipitation grids, for faster processing and storage while preserving critical patterns.
+    \item \textit{Data Denoising:} Enhancing the quality of noisy remote sensing data (e.g., satellite imagery or LiDAR scans) to improve the accuracy of downstream analyses like land cover classification or flood mapping.
+    \item \textit{Clustering:} Identifying groups in the data, such as categorizing regions based on similar hydrological characteristics or climate patterns, without pre-defined labels.
+
 \end{itemize}
 
-\subsection{Techniques and Their Applications}
-Common techniques in unsupervised learning include:
+\subsection{Self-Supervised Learning}
+Self-supervised learning is a type of machine learning where the model generates its own labels from the input data, eliminating the need for human-annotated labels. These pseudo-labels guide the training process, making it possible to leverage vast amounts of unlabeled data. This approach is especially useful in hydrology, where labeled datasets are often scarce or incomplete.
 
-\begin{itemize}
-    \item \textbf{Clustering:} Grouping sets of precipitation data to find common patterns in rainfall distribution.
-    \item \textbf{Dimensionality Reduction:} Applying Principal Component Analysis (PCA) to reduce the number of variables in large-scale climate models without losing essential information.
-\end{itemize}
-
-Both supervised and unsupervised learning offer robust tools for tackling the complex challenges faced in hydrology and environmental sciences. By leveraging these techniques, researchers can gain deeper insights into environmental processes and improve the predictive performance of their models.
 
 
 
