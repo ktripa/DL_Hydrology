@@ -1,0 +1,20 @@
+\section{Evaluating Deep Learning Models}
+Understanding how to evaluate deep learning models effectively is crucial for developing robust neural networks.
+
+\subsection{Data Splits: Training, Validation, and Test Sets}
+To evaluate a model, we divide our dataset into three distinct sets:
+
+\begin{enumerate}
+    \item \textit{Training Set:} Used to train the model. The model learns patterns and adjusts its parameters on this data.
+    \item \textit{Validation Set}: Used to tune the model’s hyperparameters, such as the number of layers or learning rate. It acts as a feedback mechanism to guide model improvements without being part of training.
+    \item \textit{Test Set:} Used to assess the model’s final performance. It represents completely unseen data and ensures that the model generalizes well beyond the data it was trained or validated on.
+\end{enumerate}
+
+\paragraph{Why Not Just Use Two Sets? \newline}
+
+At first glance, splitting the data into only training and test sets might seem simpler. However, developing a model often involves hyperparameter tuning, where decisions about the model’s architecture or training process are made based on its performance during development. Relying only on the test set for this tuning can lead to \textit{information leaks}, where the test data indirectly influences the model. This results in overly optimistic evaluations that don’t reflect real-world performance. The validation set prevents this by acting as an intermediate checkpoint. The test set is kept untouched until the very end, ensuring a fair assessment.
+
+\paragraph{The Risk of Overfitting the Validation Set\newline}
+
+Repeatedly tuning a model based on validation performance can inadvertently make the model overly specialized to the validation data. This happens because small amounts of information about the validation set "leak" into the model during each tuning step. If this process is repeated many times, the validation set’s reliability as an unbiased evaluation metric diminishes. To ensure a truly robust evaluation, the test set must remain untouched throughout the development process.
+

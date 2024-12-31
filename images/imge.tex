@@ -1,0 +1,60 @@
+Step-by-Step Guide to Uploading and Attaching PNG Images in Overleaf
+Upload the PNG File:
+
+Go to your Overleaf project.
+Click on the "Upload" button (usually a green arrow pointing up).
+Select the PNG image(s) from your computer to upload them to your project directory.
+Include the Image in Your Document:
+
+Use the graphicx package in your LaTeX document to manage images. Add the following line in the preamble (before \begin{document}):
+latex
+Copy code
+\usepackage{graphicx}
+Place the Image in the Document:
+
+To include the image in your document, use the \includegraphics command. For example:
+latex
+Copy code
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{image_name.png}
+    \caption{Caption for the image.}
+    \label{fig:image_label}
+\end{figure}
+Replace image_name.png with the exact filename of your PNG file. You can adjust the width to control the size of the image.
+Organize Your Project (Optional):
+
+For larger projects, consider creating a folder (e.g., images) in your Overleaf project directory. Place your PNG files in this folder and reference them as follows:
+latex
+Copy code
+\includegraphics[width=\linewidth]{images/image_name.png}
+Example Code
+Here’s a complete example of how your document might look:
+
+latex
+Copy code
+\documentclass{article}
+\usepackage{graphicx}
+
+\begin{document}
+
+\section{Sample Image}
+Below is an example of an image included in a LaTeX document.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{example_image.png}
+    \caption{This is an example image.}
+    \label{fig:example}
+\end{figure}
+
+\end{document}
+Tips:
+Image Size: Use options like width, height, or scale in the \includegraphics command to resize your image:
+latex
+Copy code
+\includegraphics[width=0.5\textwidth]{image_name.png} % 50% of text width
+\includegraphics[scale=0.8]{image_name.png} % 80% of original size
+Positioning: Use [h!], [t], [b], or [p] in the figure environment to control where the image appears (h for "here", t for "top", b for "bottom", p for "page of floats").
+Referencing: Use \label and \ref to reference figures within your text.
+This method ensures your images are neatly integrated into your Overleaf project and LaTeX document.

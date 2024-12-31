@@ -15,6 +15,7 @@
     filecolor=magenta,      
     urlcolor=cyan,
 }
+\setcounter{secnumdepth}{2}
 
 % Configure header and footer
 \pagestyle{fancy}
@@ -73,10 +74,11 @@
 % Custom command to start chapters on a new page with Arabic numerals
 \mainmatter
 
-% \include{chapters/chapter1_intro_to_python}
+\include{chapters/python basics/chapter1_intro_to_python}
+\include{chapters/DLconcepts/DL_concepts}
 \include{chapters/DL Fundamentals/DL_fundamentals_main}
-
-% \include{chapters/autoencoder/autoencoder}
+\include{chapters/keras and tf/keras_main}
+\include{chapters/autoencoder/autoencoder}
 \include{chapters/machine_learning}
 \include{chapters/deep_learning_applications}
 \include{chapters/case_studies}

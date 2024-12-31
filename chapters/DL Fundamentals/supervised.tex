@@ -1,4 +1,4 @@
-\chapter{Fundamentals of Deep Learning}
+
 % ---------------------------------------- Major Branches of Deep Learning -------------------------
 \section{Major Branches of Deep Learning}
 \subsection{Supervised Learning}
@@ -8,7 +8,7 @@ Supervised learning tasks typically fall into two categories:
 \item \textit{Classification:} Sorting data into predefined categories. For example, classifying land cover types (e.g., forests, urban areas, water bodies) based on satellite images.
 \item \textit{Regression:} Predicting continuous numerical values. An example is forecasting river water levels based on historical data and environmental conditions.
 \end{itemize}
-Supervised learning plays a pivotal role in hydrology and environmental sciences, powering a wide range of applications such as image classification, temperature forecasting, and hurricane tracking. To tackle these tasks, specific deep learning architectures are particularly effective. For example, Recurrent Neural Networks (RNNs) and their advanced variant, Long Short-Term Memory networks (LSTMs), excel at processing and forecasting sequential data, making them ideal for analyzing time-series datasets like rainfall records or river flow patterns. On the other hand, Convolutional Neural Networks (CNNs) are exceptionally adept at handling image-based tasks. They are commonly used for interpreting satellite images, such as identifying land cover types or detecting environmental changes.
+Supervised learning () plays a pivotal role in hydrology and environmental sciences, powering a wide range of applications such as image classification, temperature forecasting, and hurricane tracking. To tackle these tasks, specific deep learning architectures are particularly effective. For example, Recurrent Neural Networks (RNNs) and their advanced variant, Long Short-Term Memory networks (LSTMs), excel at processing and forecasting sequential data, making them ideal for analyzing time-series datasets like rainfall records or river flow patterns. On the other hand, Convolutional Neural Networks (CNNs) are exceptionally adept at handling image-based tasks. They are commonly used for interpreting satellite images, such as identifying land cover types or detecting environmental changes.
 Here are some representative examples of how supervised learning is applied in hydrology and environmental sciences:
 \begin{itemize}
     \item \textit{Precipitation Forecasting:} Predicting rainfall amounts to aid in water resource management and flood prevention.
@@ -17,6 +17,14 @@ Here are some representative examples of how supervised learning is applied in h
 \item \textit{Image Segmentation:} Identifying specific regions in satellite images, such as flood-affected areas, deforested zones, or crop health conditions.
 \item \textit{Object Detection:} Identifying and categorizing objects in satellite imagery, such as water bodies, vegetation types, or urban areas.
 \end{itemize}
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{images/supervised_learning_classification_image.png}
+    \caption{Three Major branches of Deep Learning: supervised learning, unsupervised learning, and self-supervised learning.}
+    \label{fig:supervised}
+\end{figure}
 
 
 \subsection{Unsupervised Learning }
@@ -48,7 +56,7 @@ Here are two simple examples to illustrate self-supervised learning:
 
 \textbf{NOTE:} In this book, we’ll primarily focus on supervised learning, as it remains the most widely used and impactful form of deep learning in hydrology and environmental sciences, powering applications like precipitation forecasting, flood mapping, and drought prediction. We’ll also briefly explore self-supervised learning in later chapters, as it offers promising solutions for leveraging large, unlabeled datasets, which are common in these fields.
 
-\subsection{Reinforcement Learning}
+\subsection{Reinforcement Learning (RL)}
 There is another branch of DL called Reinforcement Learning (RL), where an agent interacts with its environment, learning through trial and error to take actions that maximize a reward signal. Unlike traditional DL, which focuses on mapping inputs to outputs, RL emphasizes decision-making in dynamic environments. For example, an RL model could determine optimal reservoir release strategies by balancing flood control and water conservation. While RL has shown success in fields like robotics and gaming, its applications in hydrology are still largely in the research phase. In this book, we will primarily focus on supervised learning, leaving RL for further exploration in advanced studies.
 
 % ----------------------------------------Evaluating Deep Learning Models -------------------------
@@ -74,61 +82,8 @@ There is another branch of DL called Reinforcement Learning (RL), where an agent
 
 
 
-\section{Evaluating Deep Learning Models}
-Understanding how to evaluate deep learning models effectively is crucial for developing robust neural networks.
 
-\subsection{Data Splits: Training, Validation, and Test Sets}
-\begin{itemize}
-    \item Discuss the importance of dividing the data into training, validation, and test datasets to prevent overfitting and estimate the model's performance on new data.
-\end{itemize}
 
-\subsection{K-fold Cross-Validation with Shuffling}
-\begin{lstlisting}[language=Python]
-# Example Python code for k-fold cross-validation with shuffling
-from sklearn.model_selection import KFold
-import numpy as np
 
-data = np.array([...])  # Example data array
-kfold = KFold(n_splits=5, shuffle=True, random_state=42)
 
-for train, test in kfold.split(data):
-    # Apply training and testing here
-\end{lstlisting}
-
-% --------------------------------- Data Processing and Feature Engineering ----------------------
-
-\section{Data Processing and Feature Engineering}
-\begin{itemize}
-    \item \textbf{Normalization and Vectorization:} Techniques to scale and convert data into a format suitable for deep learning.
-    \item \textbf{Handling Missing Values:} Strategies for dealing with incomplete datasets.
-    \item \textbf{Feature Engineering:} Discuss how effective features can be engineered from data to improve model performance.
-\end{itemize}
-% --------------------------------- Overfitting, Underfitting, and Model Optimization ---------------
-
-\section{Overfitting, Underfitting, and Model Optimization}
-\begin{itemize}
-    \item Discuss the signs of overfitting and underfitting and their implications on model performance.
-    \item Explore strategies to achieve the optimal fit, including adjusting the model size.
-\end{itemize}
-
-\section{Techniques to Combat Overfitting}
-\begin{itemize}
-    \item \textbf{Weight Regularization:} Add L1 or L2 regularization to the model.
-    \item \textbf{Dropout:} Randomly dropping units from the neural network during training to prevent over-reliance on any single neuron.
-    \item \textbf{Batch Normalization:} Standardize the inputs to a layer within a mini-batch to stabilize the learning process.
-\end{itemize}
-% --------------------------------- Universal Workflow of Deep Learning ---------------
-
-\section{Universal Workflow of Deep Learning}
-Outline the standard steps involved in a deep learning project:
-\begin{enumerate}
-    \item Defining the problem and the data inputs.
-    \item Choosing metrics and methods for evaluation.
-    \item Engineering features from the data.
-    \item Developing models to combat overfitting.
-    \item Implementing interpretive mechanisms to understand model predictions.
-\end{enumerate}
-
-\section{Summary}
-Summarize the key points discussed in the chapter and reiterate the importance of a systematic approach to developing deep learning models.
 
