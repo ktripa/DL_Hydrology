@@ -1,0 +1,79 @@
+\section*{Perfromance Metrics}
+ % Ensure longtable package is included in the preamble
+\begin{longtable}{|p{0.2\textwidth}|p{0.3\textwidth}|p{0.45\textwidth}|}
+\hline
+\textbf{Metric} & \textbf{Equation} & \textbf{Python Code} \\
+\hline
+Mean Squared Error (MSE): Measures the average squared difference between observed and predicted values. &
+\( \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \) &
+\begin{lstlisting}[language=Python, numbers=none]
+import numpy as np
+
+def calculate_mse(y_true, y_pred):
+    return np.mean((y_true - y_pred) ** 2)
+
+# Example
+y_true = np.array([1, 2, 3, 4, 5])
+y_pred = np.array([1.1, 2.1, 2.9, 3.8, 5.2])
+mse = calculate_mse(y_true, y_pred)
+print("MSE:", mse)
+\end{lstlisting} \\
+\hline
+Root Mean Squared Error (RMSE): The square root of MSE, providing error in the same unit as the target. &
+\( \text{RMSE} = \sqrt{\text{MSE}} \) &
+\begin{lstlisting}[language=Python, numbers=none]
+def calculate_rmse(y_true, y_pred):
+    return np.sqrt(np.mean((y_true - y_pred) ** 2))
+
+rmse = calculate_rmse(y_true, y_pred)
+print("RMSE:", rmse)
+\end{lstlisting} \\
+\hline
+Nash-Sutcliffe Efficiency (NSE): Compares model performance to the mean of observed data. Higher values (close to 1) are better. &
+\( \text{NSE} = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2} \) &
+\begin{lstlisting}[language=Python, numbers=none]
+def calculate_nse(y_true, y_pred):
+    numerator = np.sum((y_true - y_pred) ** 2)
+    denominator = np.sum((y_true - np.mean(y_true)) ** 2)
+    return 1 - (numerator / denominator)
+
+nse = calculate_nse(y_true, y_pred)
+print("NSE:", nse)
+\end{lstlisting} \\
+\hline
+Coefficient of Determination (R$^2$): Represents the proportion of the variance in the observed data explained by the model. &
+\( R^2 = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2} \) &
+\begin{lstlisting}[language=Python, numbers=none]
+def calculate_r2(y_true, y_pred):
+    ss_res = np.sum((y_true - y_pred) ** 2)
+    ss_tot = np.sum((y_true - np.mean(y_true)) ** 2)
+    return 1 - (ss_res / ss_tot)
+
+r2 = calculate_r2(y_true, y_pred)
+print("R2:", r2)
+\end{lstlisting} \\
+\hline
+Percent Bias (\%Bias): Measures the average tendency of simulated data to be larger or smaller than observed values. &
+\( \%\text{Bias} = \frac{\sum (y_i - \hat{y}_i)}{\sum y_i} \times 100 \) &
+\begin{lstlisting}[language=Python, numbers=none]
+def calculate_percent_bias(y_true, y_pred):
+    return 100 * np.sum(y_true - y_pred) / np.sum(y_true)
+
+percent_bias = calculate_percent_bias(y_true, y_pred)
+print("%Bias:", percent_bias)
+\end{lstlisting} \\
+\hline
+Accuracy (for Classification): Percentage of correctly classified instances. &
+\( \text{Accuracy} = \frac{\text{Correct Predictions}}{\text{Total Predictions}} \) &
+\begin{lstlisting}[language=Python, numbers=none]
+def calculate_accuracy(y_true, y_pred):
+    return np.sum(y_true == y_pred) / len(y_true)
+
+# Example for classification
+y_true_class = np.array([0, 1, 1, 0, 1])
+y_pred_class = np.array([0, 1, 0, 0, 1])
+accuracy = calculate_accuracy(y_true_class, y_pred_class)
+print("Accuracy:", accuracy)
+\end{lstlisting} \\
+\hline
+\end{longtable}

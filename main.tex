@@ -8,6 +8,12 @@
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 \usepackage{lipsum} % Only for generating text in this example
+\usepackage{longtable}
+\usepackage{tikz,lipsum,lmodern}
+\usepackage{wrapfig}
+\usepackage[most]{tcolorbox}
+\usepackage{mdframed}
+\usepackage{enumitem} % For custom bullet styles
 
 \hypersetup{
     colorlinks=true,
@@ -59,7 +65,7 @@
 
 \lstset{style=mystyle}
 
-\title{\textbf{A Text Book for Deep Learning in Hydrology}\\ \large For Hydrologists and Environmental Scientists}
+\title{\textbf{Deep Learning for Water and Earth Sciences: Theory and Practice with Python}}
 \author{Kumar Puran Tripathy \\ Ashok Kumar Mishra}
 \date{\today}
 
@@ -73,18 +79,20 @@
 
 % Custom command to start chapters on a new page with Arabic numerals
 \mainmatter
-
-\include{chapters/python basics/chapter1_intro_to_python}
-\include{chapters/DLconcepts/DL_concepts}
-\include{chapters/DL Fundamentals/DL_fundamentals_main}
-\include{chapters/keras and tf/keras_main}
-\include{chapters/autoencoder/autoencoder}
-\include{chapters/machine_learning}
-\include{chapters/deep_learning_applications}
-\include{chapters/case_studies}
+% \include{preface/Outline}
+\include{preface/preface}
+\include{chapters/Part_1/python basics/chapter1_intro_to_python}
+\include{chapters/Part_1/DLconcepts/DL_concepts}
+\include{chapters/Part_1/mathematics/mathematics}
+\include{chapters/Part_1/DL Fundamentals/DL_fundamentals_main}
+% \include{chapters/Part_2/keras_main}
+% \include{chapters/Part_2/autoencoder/autoencoder}
+% \include{chapters/machine_learning}
+% \include{chapters/deep_learning_applications}
+% \include{chapters/case_studies}
 
 % Appendices and index would go here
 \appendix
-\include{chapters/appendix}
+% \include{chapters/appendix}
 
 \end{document}
